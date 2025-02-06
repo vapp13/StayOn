@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnyWakeLock</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .navbar-light-mode {
+            background-color: #f8f9fa;
+        }
+        .navbar-dark-mode {
+            background-color: #343a40;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <nav class="navbar navbar-expand-lg navbar-light-mode">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AnyWakeLock</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Other Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Donations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+                <button class="btn btn-primary me-2" id="donateButton">Buy me a coffee</button>
+                <button class="btn btn-secondary" id="toggleMode">Toggle Light/Dark Mode</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1>Welcome to AnyWakeLock</h1>
+        <p>This website will use the Wake Lock API to prevent your screen from going idle.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('toggleMode').addEventListener('click', () => {
+            const body = document.body;
+            const navbar = document.querySelector('.navbar');
+            if (body.classList.contains('light-mode')) {
+                body.classList.replace('light-mode', 'dark-mode');
+                navbar.classList.replace('navbar-light-mode', 'navbar-dark-mode');
+            } else {
+                body.classList.replace('dark-mode', 'light-mode');
+                navbar.classList.replace('navbar-dark-mode', 'navbar-light-mode');
+            }
+        });
+    </script>
+</body>
+</html>
