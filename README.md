@@ -37,3 +37,66 @@ Before you start, make sure you have a modern browser that supports the **Wake L
 1. Clone the repository to your local machine:
    ```bash
    git clone https://github.com/your-username/any-wakelock.git
+2. Navigate into the project directory:
+    ```bash
+    cd any-wakelock
+3. Open the index.html file in your browser:
+    ```bash
+    open index.html
+4. Play around with the Wake Lock functionality and the theme toggle!
+
+## 💡 **Usage**
+
+- **Activate Wake Lock**: Click the "Turn Wake Lock On" button to prevent the screen from turning off.
+- **Deactivate Wake Lock**: Click the same button again to release the Wake Lock and allow the screen to go to sleep.
+- **Dark/Light Mode Toggle**: Click the moon icon 🌙 in the top-right corner to switch between themes.
+- **Auto-Reactivation**: Check the option to re-activate the Wake Lock automatically when the tab becomes active again.
+
+---
+
+## 🌍 **Supported Browsers**
+
+This app uses the Screen Wake Lock API, which is currently supported in modern browsers like:
+
+- Google Chrome (Desktop and Android)
+- Microsoft Edge
+- Opera
+
+> Note: The API may not be supported in all browsers. If the Wake Lock API is not supported, a message will be displayed.
+
+---
+
+## 🛠️ **Built With**
+
+- **HTML5** - Markup language used for structuring the page.
+- **CSS3** - Styling the page for a modern look and feel.
+- **JavaScript** - Handling Wake Lock API and user interaction.
+- **Bootstrap 5** - For fast and responsive design.
+- **Bootstrap Icons** - For adding icons to the UI.
+
+---
+
+## 🤝 **Contributing**
+
+We welcome contributions! If you have any ideas for improving this project or fixing bugs, feel free to:
+
+1. Fork the repo
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a pull request
+
+---
+
+## 📜 **License**
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📱 **Contact**
+
+If you have any questions or suggestions, feel free to reach out!
+
+- Email: 
+- GitHub: [vapp13](https://github.com/vapp13)
