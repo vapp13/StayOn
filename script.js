@@ -6,10 +6,10 @@ const autoWakeCheck = document.getElementById("auto-wake-lock");
 // Test support for the Wake Lock API
 if ('wakeLock' in navigator) {
     isSupported = true;
-    statusElem.textContent = 'Screen Wake Lock API supported 🎉';
+    statusElem.textContent = 'StayOn! API supported 🎉';
 } else {
     wakeButton.disabled = true;
-    statusElem.textContent = 'Wake lock is not supported by this browser.';
+    statusElem.textContent = 'StayOn! is not supported by this browser.';
 }
 
 if (isSupported) {
@@ -18,22 +18,22 @@ if (isSupported) {
     async function requestWakeLock() {
         try {
             wakeLock = await navigator.wakeLock.request('screen');
-            document.getElementById("wake-lock-status").textContent = "Wake lock is active!";
+            document.getElementById("wake-lock-status").textContent = "StayOn! is active.";
             document.getElementById("status-box").classList.replace("border-danger", "border-success");
-            document.getElementById("wake-lock-btn").textContent = "Turn Wake Lock Off";
+            document.getElementById("wake-lock-btn").textContent = "Deactivate StayOn!";
 
             // Listen for the release event
             wakeLock.onrelease = function(ev) {
-                console.log('Wake lock released', ev);
+                console.log('StayOn! released', ev);
                 releaseWakeLock();
             };
             wakeLock.addEventListener('release', () => {
-                // if wake lock is released alter the button accordingly
-                changeUI('released');
+                // if StayOn! is released alter the button accordingly
+                releaseWakeLock();
             });
         } catch (err) {
-            console.error(`Wake Lock error: ${err.name}, ${err.message}`);
-            changeUI('released');
+            console.error(`StayOn! error: ${err.name}, ${err.message}`);
+            releaseWakeLock();
         }
     }
 
@@ -41,18 +41,11 @@ if (isSupported) {
         if (wakeLock) {
             wakeLock.release().then(() => {
                 wakeLock = null;
-                document.getElementById("wake-lock-status").textContent = "Wake lock has been released!";
+                document.getElementById("wake-lock-status").textContent = "StayOn! has been released!";
                 document.getElementById("status-box").classList.replace("border-success", "border-danger");
-                document.getElementById("wake-lock-btn").textContent = "Turn Wake Lock On";
+                document.getElementById("wake-lock-btn").textContent = "Activate StayOn!";
             });
         }
-    }
-
-    function changeUI(status = 'acquired') {
-        const acquired = status === 'acquired' ? true : false;
-        wakeButton.dataset.status = acquired ? 'on' : 'off';
-        wakeButton.textContent = `Turn Wake Lock ${acquired ? 'OFF' : 'ON'}`;
-        statusElem.textContent = `Wake Lock ${acquired ? 'is active!' : 'has been released!'}`;
     }
 
     wakeButton.addEventListener("click", () => {
@@ -66,17 +59,17 @@ if (isSupported) {
     // Handle visibility change
     const handleVisibilityChange = () => {
         if (document.visibilityState === 'hidden') {
-            // Release the wake lock when the tab becomes inactive
+            // Release StayOn! when the tab becomes inactive
             releaseWakeLock();
         } else if (wakeLock === null) {
-            // Reacquire the wake lock if the tab becomes active and wake lock is not active
+            // Reacquire StayOn! if the tab becomes active and StayOn! is not active
             if (autoWakeCheck.checked) {
                 requestWakeLock();
             }
         }
     };
 
-    // Auto-reactivate wake lock if checkbox is checked
+    // Auto-reactivate StayOn! if checkbox is checked
     autoWakeCheck.addEventListener('change', () => {
         if (autoWakeCheck.checked) {
             document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -85,7 +78,7 @@ if (isSupported) {
         }
     });
 
-    // If the checkbox is checked, automatically re-acquire the wake lock when the tab becomes active again
+    // If the checkbox is checked, automatically re-acquire StayOn! when the tab becomes active again
     if (autoWakeCheck.checked) {
         document.addEventListener('visibilitychange', handleVisibilityChange);
     }
