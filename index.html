@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,8 @@
     <nav class="navbar px-3 d-flex justify-content-between">
         <span class="navbar-brand fw-bold">StayOn!</span>
         <!-- <img src="logo.png" alt="StayOn Logo" class="navbar-brand" style="height: 40px;"> -->
-        <button class="btn btn-outline-dark" id="toggle-theme">
-            <i class="bi bi-moon-fill"></i>
+        <button class="btn" id="toggle-theme" title="Toggle Theme">
+            <i class="bi bi-sun-fill "></i>
         </button>
     </nav>
     
@@ -24,7 +24,7 @@
         <button id="wake-lock-btn" class="btn btn-primary my-3">Activate StayOn!</button>
         
         <div id="status-box" class="border border-danger rounded p-3 mt-3">
-            <div class="p-2 text-white bg-dark fw-bold">StayOn! Status</div>
+            <div id="status-banner" class="p-2 text-white bg-danger fw-bold">StayOn! Status</div>
             <div id="wake-lock-status" class="p-3">StayOn! has been disabled</div>
         </div>
         

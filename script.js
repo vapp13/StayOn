@@ -20,6 +20,7 @@ if (isSupported) {
             wakeLock = await navigator.wakeLock.request('screen');
             document.getElementById("wake-lock-status").textContent = "StayOn! is active.";
             document.getElementById("status-box").classList.replace("border-danger", "border-success");
+            document.getElementById("status-banner").classList.replace("bg-danger", "bg-success");
             document.getElementById("wake-lock-btn").textContent = "Deactivate StayOn!";
 
             // Listen for the release event
@@ -43,6 +44,7 @@ if (isSupported) {
                 wakeLock = null;
                 document.getElementById("wake-lock-status").textContent = "StayOn! has been released!";
                 document.getElementById("status-box").classList.replace("border-success", "border-danger");
+                document.getElementById("status-banner").classList.replace("bg-success", "bg-danger");
                 document.getElementById("wake-lock-btn").textContent = "Activate StayOn!";
             });
         }
@@ -94,9 +96,9 @@ document.getElementById("toggle-theme").addEventListener("click", () => {
     htmlElement.dataset.bsTheme = newTheme;
 
     // Add or remove the 'bg-light' class based on the current theme
-    if (newTheme === "dark") {
-        toggleButton.classList.add("bg-light");
-    } else {
-        toggleButton.classList.remove("bg-light");
-    }
+    // if (newTheme === "dark") {
+    //     toggleButton.classList.add("bg-light");
+    // } else {
+    //     toggleButton.classList.remove("bg-light");
+    // }
 });
