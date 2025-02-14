@@ -94,11 +94,4 @@ document.getElementById("toggle-theme").addEventListener("click", () => {
     // Switch between light and dark themes
     const newTheme = htmlElement.dataset.bsTheme === "light" ? "dark" : "light";
     htmlElement.dataset.bsTheme = newTheme;
-
-    // Add or remove the 'bg-light' class based on the current theme
-    // if (newTheme === "dark") {
-    //     toggleButton.classList.add("bg-light");
-    // } else {
-    //     toggleButton.classList.remove("bg-light");
-    // }
 });

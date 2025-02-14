@@ -1,6 +1,6 @@
-# 🖥️ **any.WakeLock** - A Simple Wake Lock API Demo
+# 🖥️ **StayOn!** - A Simple Wake Lock API Demo
 
-Welcome to **any.WakeLock**! This project demonstrates how to use the **Screen Wake Lock API** to prevent your device's screen from turning off while your webpage is active.
+Welcome to **StayOn!**! This project demonstrates how to use the **Screen Wake Lock API** to prevent your device's screen from turning off while your webpage is active.
 
 This lightweight app allows you to experiment with the Wake Lock API and manage screen sleep behavior across different browsers.
 
@@ -36,10 +36,10 @@ Before you start, make sure you have a modern browser that supports the **Wake L
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/any-wakelock.git
+   git clone https://github.com/your-username/StayOn.git
 2. Navigate into the project directory:
     ```bash
-    cd any-wakelock
+    cd StayOn
 3. Open the index.html file in your browser:
     ```bash
     open index.html
@@ -49,7 +49,7 @@ Before you start, make sure you have a modern browser that supports the **Wake L
 
 - **Activate Wake Lock**: Click the "Turn Wake Lock On" button to prevent the screen from turning off.
 - **Deactivate Wake Lock**: Click the same button again to release the Wake Lock and allow the screen to go to sleep.
-- **Dark/Light Mode Toggle**: Click the moon icon 🌙 in the top-right corner to switch between themes.
+- **Dark/Light Mode Toggle**: Click the sun icon ☀ in the top-right corner to switch between themes.
 - **Auto-Reactivation**: Check the option to re-activate the Wake Lock automatically when the tab becomes active again.
 
 ---
